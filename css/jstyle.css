@@ -1,0 +1,63 @@
+.overlay-tip {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.overlay-tip img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    filter: brightness(80%);
+}
+
+.overlay-tip .tip-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+
+.pest-hero {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.pest-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(75%);
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #f7f7f7;
+    background: rgba(0,0,0,0.35);
+    padding: 15px 20px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.hero-overlay h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.hero-overlay p {
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+

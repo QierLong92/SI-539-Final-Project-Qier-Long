@@ -1,0 +1,392 @@
+/* skip to the main content link styles */
+.skip a {
+    position: absolute;
+    top: -65px;
+    background: white;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.skip a:focus {
+    top: 25px;
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    background-color: #c9ada7;
+    /* Deep Prussian Blue */
+    padding: 0 40px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    /* light harbor blue */
+    padding-bottom: 4px;
+    font-family: Helvetica;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    gap: 24px;
+}
+
+nav ul li a:hover {
+    color: #bc4749;
+}
+
+/* Active page style */
+nav ul li a.active {
+    font-weight: bold;
+    color: #bc4749;
+}
+
+nav a:focus {
+    font: bold;
+    color: #ffffff;
+}
+
+body {
+    background-color: #f2e9e4;
+}
+
+/* Main content styles */
+#main {
+    margin: 0 auto;
+    /* center the layout */
+    padding: 0 24px;
+    /* add breathing space */
+    max-width: 900px;
+    row-gap: 24px;
+    /* consistent spacing between sections */
+}
+
+
+
+
+
+/* ---------- Type scale ---------- */
+h1 {
+    font-family: "Palatino Linotype";
+    color: #283618;
+    font-weight: 600;
+    /* slight bold for better hierarchy */
+    font-size: 2.25rem;
+    /* responsive type scale */
+    margin-top: 48px;
+    margin-bottom: 16px;
+}
+
+/* Subtitle / section heading */
+h2 {
+    font-size: 1.375rem;
+    /* ~22px, balanced for desktop */
+    line-height: 1.3;
+    color: #283618;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+/* Sub-subheading */
+h3 {
+    font-size: 1.125rem;
+    /* ~18px */
+    line-height: 1.3;
+    color: #283618;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* ---------- Text body ---------- */
+p {
+    font-family: Helvetica;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #222;
+    font-size: 1rem;
+    max-width: 70ch;
+    /* improves readability */
+}
+
+main ul,
+main ol {
+    margin-bottom: 20px;
+    line-height: 1.5em;
+    list-style-position: inside;
+}
+
+
+
+
+
+/* Image card styles */
+.seasonal, .mostPopularPests {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(180px, 1fr));
+    gap: 24px;
+}
+
+/* Each card */
+.seasonal .image-card, .mostPopularPests .image-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Image styling */
+.seasonal img, .mostPopularPests img {
+    display: block;
+    width: 100%;
+    height: 140px;
+    /* fixes card height */
+    object-fit: cover;
+    /* crops nicely */
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+/* Label */
+.seasonal span, .mostPopularPests span {
+    font-size: 1rem;
+    color: #283618;
+    display: block;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+
+
+
+
+
+/*commonpest page*/
+/* Notebook Wrapper */
+.notebook {
+    background: #fffef5;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border: 1px solid #e5dfc3;
+    position: relative;
+
+    background-image: 
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0px,
+            transparent 23px,
+            rgba(0,0,0,0.05) 24px
+        );
+}
+
+/* Top “ring binder” holes */
+.notebook:before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    top: -12px;
+    height: 12px;
+    background:
+        radial-gradient(circle, #aaa 20%, transparent 22%) 0 0/40px 40px repeat-x;
+}
+
+/* -------------------------
+   NOTEBOOK TABS (Season Buttons)
+------------------------- */
+.season-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.season-btn {
+    padding: 8px 16px;
+    background: #ffffff;
+    border: 1px solid #c5b68f;
+    border-radius: 8px 8px 0 0;
+    font-size: 1rem;
+    color: #283618;
+    cursor: pointer;
+
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1) inset;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.season-btn:hover {
+    transform: translateY(-2px);
+}
+
+.season-btn.active {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    font-weight: 600;
+}
+
+/* -------------------------
+   SEASON PANELS
+------------------------- */
+.season-panel {
+    display: none;
+}
+
+.season-panel.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------
+   GRID OF PEST CARDS
+------------------------- */
+.pest-grid {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.pest-card {
+    background: #ffffff;
+    border: 1px solid #e6dcbc;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.pest-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.pest-card span {
+    font-size: 1rem;
+    color: #283618;
+    font-weight: 500;
+}
+
+
+
+
+
+
+/* ----------Contact page---------- */
+.contacts-list1 li{
+    list-style: none;
+    padding:12px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    row-gap: 20px;
+}
+
+
+
+
+
+
+
+/* footer */
+.site-footer {
+    background-color: #283618;
+    color: #fefae0;
+    padding: 40px 20px;
+    margin-top: 60px;
+    font-family: "Palatino Linotype";
+}
+
+.footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-about p{
+    margin-bottom: 24px;
+    color: #fff;
+}
+
+.footer-logo {
+    width: 70px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+}
+
+.footer-links a {
+    color: #fefae0;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom p {
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.back-to-top {
+    color: #fefae0;
+    text-decoration: none;
+    text-align: center;
+}
+
+.back-to-top:hover {
+    text-decoration: underline;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .seasonal, .mostPopularPests {
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
+    }
+
+    .pest-grid {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+    }
+    
+}

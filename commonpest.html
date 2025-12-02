@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo-drk.png" />
+    <link rel="stylesheet" href="css/html5reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Michigan Pest Management</title>
+
+</head>
+
+<body>
+    <div class="skip"><a href="#main">Skip to Main Content</a></div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="commonpest.html" class="active">Common Pests</a></li>
+                <!--<li><a href="#community">Cleaned House community</a></li>-->
+                <li><a href="contacts.html">Local contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container" id="main">
+    <h1>Pest Activity by Season</h1>
+    <p>Explore Michigan pests by their seasonal activity. Select a season below.</p>
+
+    <div class="notebook">
+
+        <!-- Season Tabs -->
+        <div class="season-tabs">
+            <button class="season-btn active" data-season="winter">Winter</button>
+            <button class="season-btn" data-season="spring">Spring</button>
+            <button class="season-btn" data-season="summer">Summer</button>
+            <button class="season-btn" data-season="fall">Fall</button>
+        </div>
+
+        <!-- Notebook Content -->
+        <section id="season-pests">
+
+            <div class="season-panel active" id="winter">
+                <h2>Winter Pests</h2>
+                <ul class="pest-grid">
+                    <li class="pest-card">
+                        <img src="assets/boxelder_bug.jpg">
+                        <span>Boxelder Bugs</span>
+                    </li>
+                    <li class="pest-card">
+                        <img src="assets/lady beetles 1.jpg">
+                        <span>Asian Lady Beetles</span>
+                    </li>
+                    <li class="pest-card">
+                        <img src="assets/stink bugs 1.jpg">
+                        <span>Stink Bugs</span>
+                    </li>
+                    <li class="pest-card">
+                        <img src="assets/cluster flies 1.jpg">
+                        <span>Cluster Flies</span>
+                </ul>
+            </div>
+            <div class="season-panel active" id="spring">
+                <h2>Spring Pests</h2>
+                <ul class="pest-grid">
+                    <li class="pest-card">
+                        <img src="assets/carpenter_ants.jpg">
+                        <span>Carpenter Ants</span>
+                    </li>
+                    <li class="pest-card">
+                        <img src="assets/ants 1.jpg">
+                        <span>Ants</span>
+                    </li>
+                    <li class="pest-card">
+                        <img src="assets/mosquitoes.jpg">
+                        <span>Mosquitoes</span>
+                    </li>
+                    <li class="pest-card">
+                        <img src="assets/ticks.jpg">
+                        <span>Ticks</span>
+                </ul>
+            </div>
+
+            <!-- Spring, Summer, Fall panels here -->
+        </section>
+    </div>
+    </main>
+
+    <script src="js/javascript.js"></script>
+</body>
