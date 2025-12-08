@@ -43,6 +43,10 @@ nav ul li a:hover {
     color: #bc4749;
 }
 
+nav ul li a:focus {
+    color: #bc4749;
+}
+
 /* Active page style */
 nav ul li a.active {
     font-weight: bold;
@@ -53,6 +57,17 @@ nav a:focus {
     font: bold;
     color: #ffffff;
 }
+
+nav img.header-logo {
+    width: 80px;
+    height: auto;
+    justify-content: center;
+}
+
+
+
+
+
 
 body {
     background-color: #f2e9e4;
@@ -69,6 +84,97 @@ body {
     /* consistent spacing between sections */
 }
 
+/* ---------- Intro Section ---------- */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    /* <<< THIS FIXES YOUR PROBLEM */
+    margin: 40px auto;
+    max-width: 1100px;
+}
+
+/* LEFT COLUMN */
+.overview {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* spacing between h1 and p */
+}
+
+/* Michigan Map */
+
+.container .map-section {
+    width: 100%;
+    height: 40vw;
+    padding: 0;
+}
+
+.map-btn {
+    position: absolute;
+    background: none;
+    border: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.map-btn img {
+    width: 35%;
+    height: auto;
+}
+
+.map-btn:hover {
+    transform: scale(1.1);
+}
+
+/* buttons positions */
+
+.btn1 {
+    top: 50%;
+    left: 5%;
+}
+
+
+.btn2 {
+    top: 88.625%;
+    right: 31.5%;
+}
+
+.btn3 {
+    top: 98.725%;
+    left: 28.125%;
+}
+
+.btn4 {
+    top: 88.625%;
+    right: 43.725%;
+}
+
+.btn5 {
+    top: 73%;
+    left: 33%;
+}
+
+/* south michigan overlay box*/
+
+.info-box {
+    display: none;
+    /* hidden at first */
+    background: #ffffff;
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    color: #333;
+    font-size: 1rem;
+}
+
+
 
 
 
@@ -79,7 +185,7 @@ h1 {
     color: #283618;
     font-weight: 600;
     /* slight bold for better hierarchy */
-    font-size: 2.25rem;
+    font-size: 60px;
     /* responsive type scale */
     margin-top: 48px;
     margin-bottom: 16px;
@@ -126,40 +232,85 @@ main ol {
 
 
 
-
+/* ---------- Image Cards ---------- */
 /* Image card styles */
-.seasonal, .mostPopularPests {
+.seasonal,
+.mostPopularPests {
     list-style: none;
     padding: 0;
     margin: 20px 0;
     display: grid;
-    grid-template-columns: repeat(5, minmax(180px, 1fr));
     gap: 24px;
+
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
-/* Each card */
-.seasonal .image-card, .mostPopularPests .image-card {
+/* Card */
+.seasonal .image-card,
+.mostPopularPests .image-card,
+.season_panel_active .pest-card {
     background: #ffffff;
     border-radius: 10px;
     padding: 12px;
     text-align: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
 }
 
-/* Image styling */
-.seasonal img, .mostPopularPests img {
-    display: block;
-    width: 100%;
-    height: 140px;
-    /* fixes card height */
-    object-fit: cover;
-    /* crops nicely */
-    border-radius: 6px;
-    margin-bottom: 8px;
+/* Hover enlarge */
+.seasonal .image-card:hover,
+.mostPopularPests .image-card:hover,
+.season_panel_active .pest-card :hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
+
+/* Title */
+.seasonal .image-card span,
+.mostPopularPests .image-card span,
+.season_panel_active .pest-card span {
+    font-weight: 600;
+}
+
+/* Responsive image area */
+.seasonal .image-card img,
+.mostPopularPests .image-card img,
+.season_panel_active .pest-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    /* <-- choose your ratio (4:3 is common) */
+    object-fit: cover;
+    /* <-- fills area & crops extra */
+    border-radius: 8px;
+
+    transition: transform 0.35s ease;
+}
+
+/* Hover zoom */
+.seasonal .image-card:hover img,
+.mostPopularPests .image-card:hover img {
+    transform: scale(1.7) translateY(14px);
+}
+
+/* link */
+.seasonal .image-card a,
+.mostPopularPests .image-card a {
+    text-decoration: none;
+    font-family: helvetica;
+}
+
+
+
+
 
 /* Label */
-.seasonal span, .mostPopularPests span {
+.seasonal span,
+.mostPopularPests span {
     font-size: 1rem;
     color: #283618;
     display: block;
@@ -178,17 +329,9 @@ main ol {
     background: #fffef5;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     border: 1px solid #e5dfc3;
     position: relative;
-
-    background-image: 
-        repeating-linear-gradient(
-            to bottom,
-            transparent 0px,
-            transparent 23px,
-            rgba(0,0,0,0.05) 24px
-        );
 }
 
 /* Top “ring binder” holes */
@@ -216,17 +359,16 @@ main ol {
     padding: 8px 16px;
     background: #ffffff;
     border: 1px solid #c5b68f;
-    border-radius: 8px 8px 0 0;
     font-size: 1rem;
     color: #283618;
     cursor: pointer;
 
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1) inset;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1) inset;
     transition: background 0.3s, transform 0.2s;
 }
 
 .season-btn:hover {
-    transform: translateY(-2px);
+    transform: scale(1.125rem) translateY(-2px);
 }
 
 .season-btn.active {
@@ -238,19 +380,26 @@ main ol {
 /* -------------------------
    SEASON PANELS
 ------------------------- */
-.season-panel {
+.season_panel_active {
     display: none;
 }
 
-.season-panel.active {
+.season_panel_active.active {
     display: block;
     animation: fadeIn 0.4s ease;
 }
 
 /* Fade animation */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(4px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* -------------------------
@@ -261,7 +410,7 @@ main ol {
     padding: 0;
     margin-top: 15px;
     display: grid;
-    grid-template-columns: repeat(4, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 20px;
 }
 
@@ -271,7 +420,7 @@ main ol {
     border-radius: 10px;
     padding: 12px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 .pest-card img {
@@ -283,24 +432,92 @@ main ol {
 }
 
 .pest-card span {
-    font-size: 1rem;
+    font-size: 16px;
     color: #283618;
     font-weight: 500;
+    font-family: helvetica;
+}
+
+.pest-card:hover img {
+    transform: scale(1.7) translateY(14px);
 }
 
 
 
 
-
-
 /* ----------Contact page---------- */
-.contacts-list1 li{
+.contacts-list1 li {
     list-style: none;
-    padding:12px;
+    padding: 12px;
     background: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    row-gap: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;   /* ensures the top aligns */
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.contact-text {
+    flex: 1;                   /* keeps text on the left */
+}
+
+.contact-logo {
+    width: 180px;              /* adjust size */
+    height: auto;
+    object-fit: contain;       /* clean image appearance */
+}
+
+
+
+
+/* ---------- Pest page ---------- */
+#pest1main {
+    background: #ffffff;
+    padding: 20px;
+}
+
+/* HERO (top image) */
+.pest-pic {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.pest-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(75%);
+}
+
+.pic-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #283618;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    max-width: 75%;
+}
+
+.pic-overlay h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.pic-overlay p {
+    margin-top: 5px;
+    font-size: 1.2rem;
 }
 
 
@@ -323,19 +540,20 @@ main ol {
     margin: 0 auto;
 }
 
-.footer-about p{
+.footer-about p {
     margin-bottom: 24px;
     color: #fff;
 }
 
 .footer-logo {
-    width: 70px;
+    width: 90px;
     height: auto;
     margin-bottom: 10px;
 }
 
 .footer-links ul {
     list-style: none;
+    background: none !important;
     padding: 0;
     margin-bottom: 24px;
 }
@@ -344,6 +562,7 @@ main ol {
     color: #fefae0;
     text-decoration: none;
     margin-right: 20px;
+    font-family: Helvetica;
 }
 
 .footer-links a:hover {
@@ -381,12 +600,45 @@ main ol {
         align-items: center;
     }
 
-    .seasonal, .mostPopularPests {
+    .seasonal,
+    .mostPopularPests {
         grid-template-columns: repeat(2, minmax(150px, 1fr));
     }
 
     .pest-grid {
         grid-template-columns: repeat(2, minmax(140px, 1fr));
     }
-    
+
+    .map-btn img {
+        width: 35%;
+        height: auto;
+    }
+
+    .btn1 {
+        top: 95%;
+        left: 5%;
+    }
+
+
+    .btn2 {
+        top: 105.625%;
+        right: 31.5%;
+    }
+
+    .btn3 {
+        top: 115.725%;
+        left: 28.125%;
+    }
+
+    .btn4 {
+        top: 105.625%;
+        right: 43.725%;
+    }
+
+    .btn5 {
+        top: 102.5%;
+        left: 27%;
+    }
+
+
 }
