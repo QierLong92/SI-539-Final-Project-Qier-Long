@@ -31,18 +31,50 @@
         <h2>Contact Information</h2>
         <div class="contacts-list1">
             <ul>
-                <li>
-                    <h3>Orkin Pest Control</h3>
-                    <p>Phone: 877-670-0657</p>
-                    <p>Email:</p>
+                <li class="contact-item">
+                    <div class="contact-text">
+                        <h3>Orkin Pest Control</h3>
+                        <p>Phone: 877-670-0657</p>
+                        <p>Website: </p> <a href="https://www.orkin.com/locations/mi/michigan" target="_blank">https://www.orkin.com/locations/mi/michigan</a>
+                    </div>
+                    <img src="assets/orkin.png" alt="Orkin Pest Control Logo" class="contact-logo">
                 </li>
-                <li>
-                    <h3>Terminix</h3>
-                    <p>Phone: 800-TERMNIX (800-837-6649)</p>
-                    <p>Email:</p>
+                <li class="contact-item">
+                    <div class="contact-text">
+                        <h3>Terminix</h3>
+                        <p>Phone: 800-837-6649</p>
+                        <p>website: <a href="https://www.terminix.com/michigan/" target="_blank">https://www.terminix.com/michigan/</a></p>
+                    </div>
             </ul>
         </div>
     </main>
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-about">
+                <img src="assets/logo.png" alt="logo" class="footer-logo">
+                <p>Resources to help Michigan residents identify and manage common household pests.</p>
+            </div>
+
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="commonpest.html">Common Pests</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#contacts">Local Contacts</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-bottom">
+                <a href="#main" class="back-to-top">Back to top ↑</a>
+                <br><br>
+                <p>© 2025 Home pest Management in Michigan</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
 </body>
 
 </html>

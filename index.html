@@ -15,26 +15,43 @@
     <div class="skip"><a href="#main">Skip to Main Content</a></div>
     <header>
         <nav>
+            <img src="assets/logo.png" alt="logo" class="header-logo">
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="commonpest.html">Common Pests</a></li>
-                <!--<li><a href="#community">Cleaned House community</a></li>-->
                 <li><a href="contacts.html">Local contacts</a></li>
             </ul>
         </nav>
     </header>
     <main class="container" id="main">
-        <div class="overview">
+        <div class="intro">
             <h1>Welcome to the Michigan Pest Management website!</h1>
-            <p>If you are bothering by pests in you house,
-                we are dedicated to helping you maintain a safe and healthy environment by providing accurate categories
-                knowledge,
-                tips for pest control for common residences, and reliable services contacts to manage for prevention of
-                pest infestations.</p>
+            <div class="overview">
+                <p>If you are bothered by pests in your house,
+                    we are dedicated to helping you maintain a safe and healthy environment by providing accurate
+                    categories
+                    knowledge,
+                    tips for pest control for common residences, and reliable services contacts to manage for prevention
+                    of
+                    pest infestations.
+                </p>
+            </div>
+            <section class="map-section">
+            </section>
+            <div class="map" id="map">
+                <!-- Four buttons -->
+                <button class="map-btn btn1"><img src="assets/north.png" alt="North part of Michigan"></button>
+                <button class="map-btn btn5"><img src="assets/middle.png" alt="Central part of Michigan"></button>
+                <button class="map-btn btn2"><img src="assets/east.png" alt="East part of Michigan"></button>
+                <button class="map-btn btn3"><img src="assets/south.png" alt="South part of Michigan"></button>
+                <button class="map-btn btn4"><img src="assets/west.png" alt="West part of Michigan"></button>
+            </div>
         </div>
-        <div class="map-image" id="map">
-            <img src="assets/michigan_map_regions.png" alt="A map of Michigan showing its different regions">
+        <div id="infoBox" class="info-box">
+            <h3 id="info-title">Region Title</h3>
+            <p id="info-text">Some information will appear here.</p>
         </div>
+
 
         <div class="commonPests text-block" tabindex="0">
             <h2>Common Pests in Michigan</h2>
@@ -43,20 +60,25 @@
             <br>
             <h3>5 Most Popular Pests in Michigan</h3>
             <ul class="mostPopularPests">
-                <li class="image-card"><span>Ants</span><img src="assets/ants 1.jpg"
-                        alt="Image of ants  Photo by Egor Kamelev: https://www.pexels.com/photo/macro-photography-of-red-ant-1104974/">
+                <li class="image-card"><a href=""><img src="assets/ants 1.jpg"
+                            alt="Image of ants  Photo by Egor Kamelev: https://www.pexels.com/photo/macro-photography-of-red-ant-1104974/">
+                        <span>Ants</span></a>
                 </li>
-                <li class="image-card"><span>Mosquitoes</span><img src="assets/mosquitoes.jpg"
-                        alt="Image of mosquitoes  Photo by Santosh Maharjan: https://www.pexels.com/photo/shallow-focus-photography-of-yellow-mosquito-107522/">
+                <li class="image-card"><a href=""><img src="assets/mosquitoes.jpg"
+                            alt="Image of mosquitoes  Photo by Santosh Maharjan: https://www.pexels.com/photo/shallow-focus-photography-of-yellow-mosquito-107522/">
+                        <span>Mosquitoes</span></a>
                 </li>
-                <li class="image-card"><span>Carpenter Ants</span><img src="assets/carpenter_ants.jpg"
-                        alt="Image of carpenter ants  Photo by Oktavianus Mulyadi: https://www.pexels.com/photo/golden-tailed-spiny-ants-known-as-shiny-bum-ants-15077039/">
+                <li class="image-card"><a href=""><img src="assets/carpenter_ants.jpg"
+                            alt="Image of carpenter ants  Photo by Oktavianus Mulyadi: https://www.pexels.com/photo/golden-tailed-spiny-ants-known-as-shiny-bum-ants-15077039/">
+                        <span>Carpenter Ants</span></a>
                 </li>
-                <li class="image-card"><span>Rodents</span><img src="assets/rodents.jpg"
-                        alt="Image of rodents  Photo by Chris F: https://www.pexels.com/photo/close-up-of-a-rat-on-the-ground-19029033/">
+                <li class="image-card"><a href=""><img src="assets/rodents.jpg"
+                            alt="Image of rodents  Photo by Chris F: https://www.pexels.com/photo/close-up-of-a-rat-on-the-ground-19029033/">
+                        <span>Rodents</span></a>
                 </li>
-                <li class="image-card"><span>Spiders</span><img src="assets/spiders.jpg"
-                        alt="Image of spiders  Photo by Pixabay: https://www.pexels.com/photo/black-and-yellow-spider-63309/">
+                <li class="image-card"><a href=""><img src="assets/spiders.jpg"
+                            alt="Image of spiders  Photo by Pixabay: https://www.pexels.com/photo/black-and-yellow-spider-63309/">
+                        <span>Spiders</span></a>
                 </li>
             </ul>
         </div>
@@ -67,19 +89,21 @@
             For current winter season, the most common pests in Michigan include:
         </p>
         <ul class="seasonal">
-            <li class="image-card"> <a href="boxelderbugs.html"><span>Boxelder bugs</span> <img src="assets/boxelder_bug.jpg"
-                    alt="A close-up image of boxelder bugs on a leaf"></a></li>
-            <li class="image-card"><span>Cluster flies</span>
-                <img src="assets/cluster flies 1.jpg"
-                    alt="A close-up image of cluster flies on a leaf  Photo by Phil Mitchell: https://www.pexels.com/photo/hoverfly-resting-on-leaf-in-natural-habitat-33074565/">
+            <li class="image-card"> <a href="boxelderbugs.html"><img src="assets/boxelder_bug.jpg"
+                        alt="A close-up image of boxelder bugs on a leaf"><span>Boxelder bugs</span></a></li>
+            <li class="image-card"><a href=""><img src="assets/cluster flies 1.jpg"
+                        alt="A close-up image of cluster flies on a leaf  Photo by Phil Mitchell: https://www.pexels.com/photo/hoverfly-resting-on-leaf-in-natural-habitat-33074565/">
+                    <span>Cluster flies</span></a>
             </li>
-            <li class="image-card"><span>Asian lady beetles</span>
-                <img src="assets/lady beetles 1.jpg"
-                    alt="A close-up image of Asian lady beetles on a flower stem Photo by Skyler Ewing: https://www.pexels.com/photo/adorable-harlequin-ladybug-sitting-on-flower-stem-against-blue-background-6356083/">
+            <li class="image-card"> <a href="">
+                    <img src="assets/lady beetles 1.jpg"
+                        alt="A close-up image of Asian lady beetles on a flower stem Photo by Skyler Ewing: https://www.pexels.com/photo/adorable-harlequin-ladybug-sitting-on-flower-stem-against-blue-background-6356083/">
+                    <span>Asian lady beetles</span></a>
             </li>
-            <li class="image-card"><span>Brown marmorated stink bugs</span>
-                <img src="assets/stink bugs 1.jpg"
-                    alt="A close-up image of brown marmorated stink bugs on a leaf Photo by Vansh Sharma: https://www.pexels.com/photo/close-up-of-a-beetle-on-a-leaf-6621112/">
+            <li class="image-card"><a href="">
+                    <img src="assets/stink bugs 1.jpg"
+                        alt="A close-up image of brown marmorated stink bugs on a leaf Photo by Vansh Sharma: https://www.pexels.com/photo/close-up-of-a-beetle-on-a-leaf-6621112/">
+                    <span>Brown marmorated stink bugs</span></a>
             </li>
         </ul>
         </div>
@@ -88,22 +112,23 @@
         <div class="footer-inner">
 
             <div class="footer-about">
-                <img src="images/logo-drk.png" alt="Michigan Pest Management logo" class="footer-logo">
+                <img src="assets/logo.png" alt="logo" class="footer-logo">
                 <p>Resources to help Michigan residents identify and manage common household pests.</p>
             </div>
 
-            <nav class="footer-links">
+            <div class="footer-links">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="commonpest.html">Common Pests</a></li>
                     <li><a href="#community">Community</a></li>
                     <li><a href="#contacts">Local Contacts</a></li>
                 </ul>
-            </nav>
+            </div>
 
             <div class="footer-bottom">
                 <a href="#main" class="back-to-top">Back to top ↑</a>
-                <p>© 2025 Michigan Pest Management</p>
+                <br><br>
+                <p>© 2025 Home pest Management in Michigan</p>
             </div>
         </div>
     </footer>
